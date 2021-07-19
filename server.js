@@ -1,5 +1,5 @@
 const express = require('express')
-const app = express()
+const app = nodeexpress()
 // const cors = require('cors')
 // app.use(cors())
 const server = require('http').Server(app)
@@ -16,6 +16,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
+  res.status(200).send();
   res.redirect(`/${uuidV4()}`)
 })
 
